@@ -1,0 +1,10 @@
+node_modules/
+bower_components/
+
+/build/background-bundle.js
+/build/client-bundle.js
+/build/background-bundle.js.map
+/build/client-bundle.js.map
+/build/content-script-bundle.js
+
+*.txt

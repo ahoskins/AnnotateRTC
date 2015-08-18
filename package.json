@@ -1,0 +1,13 @@
+{
+  "name": "chrome-annotate",
+  "dependencies": {
+    "exorcist": "^0.4.0",
+    "rangy": "^1.3.0",
+    "react": "^0.13.2",
+    "reactify": "^1.1.0"
+  },
+  "scripts": {
+    "build": "browserify src/background/background.js --debug | exorcist build/background-bundle.js.map > build/background-bundle.js & browserify -t reactify src/content-scripts/controller.jsx --debug | exorcist build/content-script-bundle.js.map > build/content-script-bundle.js",
+    "watch": "watchify src/background/background.js -o build/background-bundle.js --debug | exorcist build/background-bundle.js.map & watchify -t reactify src/content-scripts/controller.jsx -o build/content-script-bundle.js --debug | exorcist build/content-script-bundle.js.map"
+  }
+}
